@@ -1,7 +1,6 @@
 # IDEAHUB
 
 ## Estrutura das pastas
-opa
 
 - app: Contém as classes desenvolvidas para o projeto, o autoload vê essa pasta;
 - includes: Contém arquivos que serão utilizados por padrão em diversas partes do sistema
