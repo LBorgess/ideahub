@@ -8,8 +8,8 @@ use \App\Entity\Pergunta;
 if (isset($_POST['titulo'], $_POST['conteudo'])) {
     // Instância a Pergunta
     $obPergunta = new Pergunta;
-    $obPergunta->titulo   = $_POST['titulo'];
-    $obPergunta->conteudo = $_POST['conteudo'];
+    $obPergunta->perguntas_titulo   = $_POST['titulo'];
+    $obPergunta->perguntas_conteudo = $_POST['conteudo'];
     $obPergunta->cadastrar();
 }
 

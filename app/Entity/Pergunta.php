@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use App\DB\Database;
+
 /**
  * Class responsável por abstratir a parte de incluir as perguntas no banco de dados
  * @author LBorgess
@@ -12,25 +14,25 @@ class Pergunta
      * Código de identificação único da pergunta
      * @var integer
      */
-    public $id;
+    public $perguntas_id;
 
     /**
      * Título da pergunta
      * @var string
      */
-    public $titulo;
+    public $perguntas_titulo;
 
     /**
      * Contéudo descrito na pergunta
      * @var string
      */
-    public $conteudo;
+    public $perguntas_conteudo;
 
     /**
      * Data de criação da pergunta
      * @var string
      */
-    public $data;
+    public $perguntas_data;
 
     /**
      * Método responsável por realizar o cadastro da pergunta
@@ -40,10 +42,20 @@ class Pergunta
     public function cadastrar()
     {
         // DEFINIR A DATA
-        $this->data = date('Y-m-d H:i:s');
+        $this->perguntas_data = date('Y-m-d H:i:s');
 
+        // INSERIR A NOVA PERGUNTA NO BANCO DE DADOS
+        $obDatabase = new Database('perguntas');
 
-        // INSERIR A PERGUNTA NO BANCO DE DADOS
+        // ARRAY DO TIPO CHAVE-VALOR QUE VAI INSERIR OS DADOS NO BANCO
+        $this->perguntas_id = $obDatabase->insert([
+            'perguntas_titulo'   => $this->perguntas_titulo,
+            'perguntas_conteudo' => $this->perguntas_conteudo,
+            'perguntas_data'     => $this->perguntas_data
+        ]);
+
+        // DEBUG
+        echo "<pre>"; print_r($this); echo "</pre>"; exit; 
 
         // ATRIBUIR O ID DA PERGUNTA NA INSTÂNCIA
 
