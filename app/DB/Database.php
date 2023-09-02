@@ -62,10 +62,15 @@ class Database
      */
     private function setConnection()
     {
+        // TENTA REALIZAR UMA CONEXÃO COM O BANCO DE DADOS
         try {
+            // INFORMAÇÕES PARA REALIZAR A CONEXÃO
             $this->connection = new PDO('mysql:host=' . self::HOST . ';dbname=' . self::NAME, self::USER, self::PASS);
+
+            // INFORMA O ERRO QUE POSSA OCORRER COM ALGUMA QUERY SQL EXECUTADA
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
+            // CASO A CONEXÃO FALHE, EXIBIRÁ ESSE ERRO
             die('HOUVE UM ERRO: ' . $e->getMessage());
         }
     }
