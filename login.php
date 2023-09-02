@@ -19,16 +19,9 @@
             <h2>Feito por alunos para alunos</h2>
         </hgroup>
         <!-- Formulario de login -->
-        <form class="auCaixa-form" action="">
-            <h2>cadastro</h2>
-            <!-- inputs -->
-            <div class="auCaixa-input">
-                <input type="text" placeholder=" " required="required">
-                <span>
-                    <i class="material-symbols-outlined iconGoogle">person</i>
-                    Nome
-                </span>
-            </div>
+        <form class="auCaixa-form" action="index.html">
+            <h2>Login</h2>
+            <!-- input 1 -->
             <div class="auCaixa-input">
                 <input type="email" placeholder=" " required="required">
                 <span>
@@ -45,12 +38,16 @@
             </div>
             <div class="auBotoes">
                 <!-- Botão de enviar -->
-                <input type="submit" value="Cadastrar">
+                <input type="submit" value="Entrar">
                 <!-- extra -->
-                <div>
-                    <span class="auExtra">Já tem conta?
-                        <a class="auExtra auLink" tabindex="0" href="login.php
-                        ">Entrar</a>
+                <div class="auCaixa-extra">
+                    <a class="auExtra auLink" tabindex="0" href="#">Esqueceu a senha?
+                    </a>
+                    <span class="auExtra">
+                        Não tem conta?
+                        <a class="auExtra auLink" tabindex="0" href="cadastrar.php">
+                            Cadastrar
+                        </a>
                     </span>
                 </div>
             </div>
