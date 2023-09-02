@@ -1,6 +1,7 @@
 # IDEAHUB
 
 ## Estrutura das pastas
+opa
 
 - app: Contém as classes desenvolvidas;
 - includes: Contém arquivos que serão utilizados por padrão em diversas partes do sistema
