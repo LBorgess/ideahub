@@ -74,4 +74,45 @@ class Database
             die('HOUVE UM ERRO: ' . $e->getMessage());
         }
     }
+
+    /**
+     * Método responsável por executar as queries no banco de dados
+     * @param string $query
+     * @param array $params
+     * @return PDOStatement
+     */
+    public function execute($query, $params = [])
+    {
+        try {
+            $statement = $this->connection->prepare($query);
+            $statement->execute($params);
+            return $statement;
+        } catch (PDOException $e) {
+            // CASO FALHE, EXIBIRÁ ESSE ERRO
+            die('HOUVE UM ERRO: ' . $e->getMessage());
+        }
+    }
+
+    /**
+     * Método responsável por inserir as informações no banco de dados.
+     * @param array $values [ field => value ]
+     * @return integer ID inserido
+     */
+    public function insert($values)
+    {
+        // DADOS DA QUERY (CAMPOS)
+        $fields = array_keys($values);
+
+        // CRIA AS POSIÇÕES / COLUNAS DA TABELA
+        $binds = array_pad([], count($fields), '?');
+
+        // MONTA A QUERY
+        $query = 'INSERT INTO ' . $this->table . '(' . implode(',', $fields) . ') VALUES (' . implode(',', $binds) . ')';
+
+        // EXECUTA O INSERT
+        $this->execute($query, array_values($values));
+        
+        // RETORNA O ID INSERIDO
+        return $this->connection->lastInsertId();
+    }
 }
