@@ -111,7 +111,7 @@ class Database
 
         // EXECUTA O INSERT
         $this->execute($query, array_values($values));
-        
+
         // RETORNA O ID INSERIDO
         return $this->connection->lastInsertId();
     }
@@ -136,5 +136,25 @@ class Database
 
         // EXECUTA A QUERY
         return $this->execute($query);
+    }
+
+    /**
+     * Método responsável por atualizar o registro no banco de dados
+     * @param string $where
+     * @param array $values [ field => values ]
+     * @return boolean
+     */
+    public function update($where, $values)
+    {
+        // DADOS DA QUERY
+        $fields = array_keys($values);
+
+        // MONTA A QUERY
+        $query = 'UPDATE ' .$this->table. ' SET ' .implode('=?,', $fields). '=? WHERE ' .$where;
+
+        // EXECUTA A QUERY
+        $this->execute($query, array_values($values));
+
+        return true;
     }
 }
