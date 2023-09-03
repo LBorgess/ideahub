@@ -20,7 +20,7 @@ CREATE TABLE usuarios(
 CREATE TABLE perguntas(
     perguntas_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     usuarios_id INT NOT NULL,
-    titulo VARCHAR(255) NOT NULL,
+    perguntas_titulo VARCHAR(255) NOT NULL,
     perguntas_conteudo TEXT NOT NULL,
     perguntas_data TIMESTAMP NOT NULL,
 
