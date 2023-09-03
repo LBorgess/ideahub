@@ -115,4 +115,26 @@ class Database
         // RETORNA O ID INSERIDO
         return $this->connection->lastInsertId();
     }
+
+    /**
+     * Método responsável por executar uma consulta no banco de dados
+     * @param string $where
+     * @param string $order
+     * @param string $limit
+     * @param string $fields
+     * @return PDOStatement
+     */
+    public function select($where = null, $order = null, $limit = null, $fields = '*')
+    {
+        // DADOS DA QUERY
+        $where = strlen($where ?? '') ? 'WHERE ' . $where : '';
+        $order = strlen($order ?? '') ? 'ORDER BY ' . $order : '';
+        $limit = strlen($limit ?? '') ? 'LIMIT ' . $limit : '';
+
+        // MONTA A QUERY
+        $query = 'SELECT' . $fields . ' FROM ' . $this->table . ' ' . $where . ' ' . $order . ' ' . $limit;
+
+        // EXECUTA A QUERY
+        return $this->execute($query);
+    }
 }
