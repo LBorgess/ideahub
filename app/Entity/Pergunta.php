@@ -73,6 +73,15 @@ class Pergunta
     }
 
     /**
+     * Método responsável por excluir a pergunta do banco de dados
+     * @return boolean
+     */
+    public function excluir()
+    {
+        return (new Database('perguntas'))->delete('perguntas_id = ' . $this->perguntas_id);
+    }
+
+    /**
      * Método responsável por obter as perguntas no banco de dados
      * @param string $where
      * @param string $order
