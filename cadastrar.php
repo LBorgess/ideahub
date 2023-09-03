@@ -2,6 +2,8 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
+define('TITLE', 'Qual a sua pergunta?');
+
 use \App\Entity\Pergunta;
 
 // Verifica se as informações de `cadastrar.php` foram recebidas com sucesso
