@@ -3,6 +3,7 @@
 require __DIR__ . '/vendor/autoload.php';
 
 define('TITLE', 'Editar pergunta');
+define('BUTTON', 'Editar');
 
 use \App\Entity\Pergunta;
 
