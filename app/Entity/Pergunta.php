@@ -54,11 +54,7 @@ class Pergunta
             'perguntas_data'     => $this->perguntas_data
         ]);
 
-        // DEBUG
-        echo "<pre>"; print_r($this); echo "</pre>"; exit; 
-
-        // ATRIBUIR O ID DA PERGUNTA NA INSTÂNCIA
-
         // RETORNAR SUCESSO
+        return true;
     }
 }

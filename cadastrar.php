@@ -11,6 +11,10 @@ if (isset($_POST['titulo'], $_POST['conteudo'])) {
     $obPergunta->perguntas_titulo   = $_POST['titulo'];
     $obPergunta->perguntas_conteudo = $_POST['conteudo'];
     $obPergunta->cadastrar();
+
+    // RETORNA PARA O INDEX
+    header('location: index.php?status=success');
+    exit;
 }
 
 include __DIR__ . '/includes/header.php';
