@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\DB\Database;
+use \PDO;
 
 /**
  * Class responsável por abstratir a parte de incluir as perguntas no banco de dados
@@ -56,5 +57,18 @@ class Pergunta
 
         // RETORNAR SUCESSO
         return true;
+    }
+
+    /**
+     * Método responsável por obter as perguntas no banco de dados
+     * @param string $where
+     * @param string $order
+     * @param string $limit
+     * @return array
+     */
+    public static function getPergunta($where = null, $order = null, $limit = null)
+    {
+        return (new Database('perguntas'))->select($where, $order, $limit)
+        ->fetchAll(PDO::FETCH_CLASS, self::class);
     }
 }
