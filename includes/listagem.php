@@ -1,3 +1,4 @@
+
 <!-- Responsável por realizar a listagem das perguntas na página -->
 <?php
 
@@ -39,6 +40,10 @@ $resultados = strlen($resultados) ? $resultados : '<tr><td colspan=4 class="text
     <?=$mensagem?>
 
     <section class="nav justify-content-end">
+
+<main class="nav justify-content-end">
+    <section>
+
         <a href="cadastrar.php">
             <button class="btn btn-info">Nova pergunta</button>
         </a>

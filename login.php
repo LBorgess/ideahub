@@ -10,29 +10,6 @@
     <link rel="stylesheet" href="./includes/css/autenticacao.css">
 </head>
 
-
-define('TITLE', 'Qual a sua pergunta?');
-define('BUTTON', 'Perguntar');
-
-use \App\Entity\Pergunta;
-$obPergunta = new Pergunta;
-
-// Verifica se as informações de `cadastrar.php` foram recebidas com sucesso
-if (isset($_POST['titulo'], $_POST['conteudo'])) {
-    // Instância a Pergunta
-    $obPergunta->perguntas_titulo   = $_POST['titulo'];
-    $obPergunta->perguntas_conteudo = $_POST['conteudo'];
-    $obPergunta->cadastrar();
-
-    // RETORNA PARA O INDEX
-    header('location: index.php?status=success');
-    exit;
-}
-
-include __DIR__ . '/includes/header.php';
-include __DIR__ . '/includes/formulario.php';
-include __DIR__ . '/includes/footer.php';
-
 <body>
     <!-- Bloco principal -->
     <main class="auPrincipal">
@@ -42,16 +19,9 @@ include __DIR__ . '/includes/footer.php';
             <h2>Feito por alunos para alunos</h2>
         </hgroup>
         <!-- Formulario de login -->
-        <form class="auCaixa-form" action="">
-            <h2>cadastro</h2>
-            <!-- inputs -->
-            <div class="auCaixa-input">
-                <input type="text" placeholder=" " required="required">
-                <span>
-                    <i class="material-symbols-outlined iconGoogle">person</i>
-                    Nome
-                </span>
-            </div>
+        <form class="auCaixa-form" action="index.html">
+            <h2>Login</h2>
+            <!-- input 1 -->
             <div class="auCaixa-input">
                 <input type="email" placeholder=" " required="required">
                 <span>
@@ -68,12 +38,16 @@ include __DIR__ . '/includes/footer.php';
             </div>
             <div class="auBotoes">
                 <!-- Botão de enviar -->
-                <input type="submit" value="Cadastrar">
+                <input type="submit" value="Entrar">
                 <!-- extra -->
-                <div>
-                    <span class="auExtra">Já tem conta?
-                        <a class="auExtra auLink" tabindex="0" href="login.php
-                        ">Entrar</a>
+                <div class="auCaixa-extra">
+                    <a class="auExtra auLink" tabindex="0" href="#">Esqueceu a senha?
+                    </a>
+                    <span class="auExtra">
+                        Não tem conta?
+                        <a class="auExtra auLink" tabindex="0" href="cadastrar.php">
+                            Cadastrar
+                        </a>
                     </span>
                 </div>
             </div>
@@ -82,4 +56,3 @@ include __DIR__ . '/includes/footer.php';
 </body>
 
 </html>
-
