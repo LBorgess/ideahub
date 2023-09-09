@@ -2,8 +2,8 @@
 <?php
 
 $mensagem = '';
-if (isset($_GET['status'])){
-    switch($_GET['status']){
+if (isset($_GET['status'])) {
+    switch ($_GET['status']) {
         case 'success':
             $mensagem = '<div class="alert alert-success">Ação executada com sucesso</div>';
             break;
@@ -36,7 +36,7 @@ $resultados = strlen($resultados) ? $resultados : '<tr><td colspan=4 class="text
 
 <main>
 
-    <?=$mensagem?>
+    <?= $mensagem ?>
 
     <section class="nav justify-content-end">
         <a href="cadastrar.php">
@@ -44,6 +44,26 @@ $resultados = strlen($resultados) ? $resultados : '<tr><td colspan=4 class="text
         </a>
     </section>
 
+    <!-- Campo de busca -->
+    <section>
+        <form method="get">
+
+            <div class="row my-4">
+
+                <div class="col">
+                    <label for="busca">Pesquisar pergunta</label>
+                    <input type="text" name="busca" id="busca" class="form-control" value="<?=$busca?>">
+                </div>
+
+                <div class="col d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary">Pesquisar</button>
+                </div>
+            </div>
+
+        </form>
+    </section>
+
+    <!-- Listagem das perguntas -->
     <section>
         <table class="table bg-light mt-3">
             <thead>
