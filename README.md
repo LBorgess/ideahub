@@ -19,4 +19,5 @@
 
 ## Referências
 
-- [Bootstrap v4.6](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
+- [Bootstrap v5.0](https://getbootstrap.com/docs/5.0/getting-started/introduction/);
+- [Font Awesome v6.4 Free](https://fontawesome.com/v6/search)
