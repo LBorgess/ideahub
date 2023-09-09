@@ -41,7 +41,9 @@ class Pergunta
      * @return boolean
      */
     public function cadastrar()
-    {
+    {   
+        // DEFINIÇÃO DO TIMEZONE BRASILEIRO
+        date_default_timezone_set('America/Sao_Paulo');
         // DEFINIR A DATA
         $this->perguntas_data = date('Y-m-d H:i:s');
 
