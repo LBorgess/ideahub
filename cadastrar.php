@@ -6,13 +6,19 @@ define('TITLE', 'Qual a sua pergunta?');
 define('BUTTON', 'Perguntar');
 
 use \App\Entity\Pergunta;
+use \App\Session\Login;
+
+// OBRIGA O USUÁRIO A ESTAR LOGADO
+Login::requireLogin();
+
+// INSTÂNCIA DA PERGUNTA
 $obPergunta = new Pergunta;
 
 // Verifica se as informações de `cadastrar.php` foram recebidas com sucesso
 if (isset($_POST['titulo'], $_POST['conteudo'])) {
     // Instância a Pergunta
-    $obPergunta->perguntas_titulo   = $_POST['titulo'];
-    $obPergunta->perguntas_conteudo = $_POST['conteudo'];
+    $obPergunta->titulo   = $_POST['titulo'];
+    $obPergunta->conteudo = $_POST['conteudo'];
     $obPergunta->cadastrar();
 
     // RETORNA PARA O INDEX

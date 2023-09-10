@@ -4,6 +4,10 @@ require __DIR__.'/vendor/autoload.php';
 
 use \App\Entity\Pergunta;
 use \App\DB\Pagination;
+use \App\Session\Login;
+
+// OBRIGA O USUÁRIO A ESTAR LOGADO
+Login::requireLogin();
 
 // BUSCA
 // $busca = filter_input(INPUT_GET, 'busca', FILTER_SANITIZE_STRING);
@@ -16,7 +20,7 @@ $busca = filter_input(INPUT_GET, 'busca', FILTER_UNSAFE_RAW);
 // CONDIÇÕES SQL WHERE PARA BUSCAR A PERGUNTA
 $condicoes = [
     // strlen($filtroStatus ?? '') ? 'perguntas_status = "'.$filtroStatus.'"' : null,
-    strlen($busca ?? '') ? 'perguntas_titulo LIKE "%'.str_replace(' ', '%', $busca).'%"' : null
+    strlen($busca ?? '') ? 'titulo LIKE "%'.str_replace(' ', '%', $busca).'%"' : null
 ];
 
 // REMOVE ESPAÇOS NULOS OU VAZIAS NA PESQUISA/FILTRO
