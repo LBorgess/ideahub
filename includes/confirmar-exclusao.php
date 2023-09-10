@@ -7,7 +7,7 @@
     <form method="post">
 
         <div class="form-group">
-            <p>Você realmente deseja excluir a pergunta realizada sobre <strong> <?= $obPergunta->perguntas_titulo ?> </strong>?</p>
+            <p>Você realmente deseja excluir a pergunta realizada sobre <strong> <?= $obPergunta->titulo ?> </strong>?</p>
         </div>
 
         <div class="form-group">

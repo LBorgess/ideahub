@@ -15,25 +15,25 @@ class Pergunta
      * Código de identificação único da pergunta
      * @var integer
      */
-    public $perguntas_id;
+    public $id;
 
     /**
      * Título da pergunta
      * @var string
      */
-    public $perguntas_titulo;
+    public $titulo;
 
     /**
      * Contéudo descrito na pergunta
      * @var string
      */
-    public $perguntas_conteudo;
+    public $conteudo;
 
     /**
      * Data de criação da pergunta
      * @var string
      */
-    public $perguntas_data;
+    public $data;
 
     /**
      * Método responsável por realizar o cadastro da pergunta
@@ -45,16 +45,16 @@ class Pergunta
         // DEFINIÇÃO DO TIMEZONE BRASILEIRO
         date_default_timezone_set('America/Sao_Paulo');
         // DEFINIR A DATA
-        $this->perguntas_data = date('Y-m-d H:i:s');
+        $this->data = date('Y-m-d H:i:s');
 
         // INSERIR A NOVA PERGUNTA NO BANCO DE DADOS
         $obDatabase = new Database('perguntas');
 
         // ARRAY DO TIPO CHAVE-VALOR QUE VAI INSERIR OS DADOS NO BANCO
-        $this->perguntas_id = $obDatabase->insert([
-            'perguntas_titulo'   => $this->perguntas_titulo,
-            'perguntas_conteudo' => $this->perguntas_conteudo,
-            'perguntas_data'     => $this->perguntas_data
+        $this->id = $obDatabase->insert([
+            'titulo'   => $this->titulo,
+            'conteudo' => $this->conteudo,
+            'data'     => $this->data
         ]);
 
         // RETORNAR SUCESSO
@@ -67,10 +67,10 @@ class Pergunta
      */
     public function atualizar()
     {
-        return (new Database('perguntas'))->update('perguntas_id = ' . $this->perguntas_id, [
-            'perguntas_titulo'   => $this->perguntas_titulo,
-            'perguntas_conteudo' => $this->perguntas_conteudo,
-            'perguntas_data'     => $this->perguntas_data
+        return (new Database('perguntas'))->update('id = ' . $this->id, [
+            'titulo'   => $this->titulo,
+            'conteudo' => $this->conteudo,
+            'data'     => $this->data
         ]);
     }
 
@@ -80,7 +80,7 @@ class Pergunta
      */
     public function excluir()
     {
-        return (new Database('perguntas'))->delete('perguntas_id = ' . $this->perguntas_id);
+        return (new Database('perguntas'))->delete('id = ' . $this->id);
     }
 
     /**
@@ -115,7 +115,7 @@ class Pergunta
      */
     public static function getPergunta($id)
     {
-        return (new Database('perguntas'))->select('perguntas_id = ' . $id)
+        return (new Database('perguntas'))->select('id = ' . $id)
             ->fetchObject(self::class);
     }
 }
