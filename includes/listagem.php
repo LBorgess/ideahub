@@ -55,6 +55,17 @@ $resultados = strlen($resultados) ? $resultados : '<tr><td colspan=4 class="text
                     <input type="text" name="busca" id="busca" class="form-control" value="<?=$busca?>">
                 </div>
 
+                <!-- Filtros de perguntas já respondidas-->
+<!-- 
+                <div class="col">
+                    <label for="status">Respondida</label>
+                    <select name="status" id="status" class="form-control">
+                        <option value="">Sim/Não</option>
+                        <option value="s" <?=$filtroStatus == 's' ? 'selected' : ''?>>Sim</option>
+                        <option value="n" <?=$filtroStatus == 'n' ? 'selected' : ''?>>Não</option>
+                    </select>
+                </div>
+ -->
                 <div class="col d-flex align-items-end">
                     <button type="submit" class="btn btn-primary">Pesquisar</button>
                 </div>
