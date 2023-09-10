@@ -1,3 +1,17 @@
+<?php
+
+use \App\Session\Login;
+
+// DADOS DO USUÁRIO LOGADO
+$usuarioLogado = Login::getUsuarioLogado();
+
+// DETALHES DO USUÁRIO
+$usuario = $usuarioLogado ?
+    $usuarioLogado['nome'] . ' <a href="logout.php" class="font-weight-bold ml-4"> Sair </a>' :
+    'Visitante <a href="login.php" class="font-weight-bold ml-4 p-2">Entrar</a>';
+
+?>
+
 <!doctype html>
 <html lang="pt-BR">
 
@@ -30,12 +44,8 @@
                 <button aria-label="Abrir menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">Menu
                     <span id="hamburger"></span>
                 </button>
-                <ul id="menu" role="menu">
-                    <li><a href="#">Sobre</a></li>
-                    <li><a href="#">Produtos</a></li>
-                    <li><a href="#">Portfólio</a></li>
-                    <li><a href="#">Contato</a></li>
-                </ul>
+                    <div class="d-flex justify-content-start text-dark">
+                        <?= $usuario ?>
+                    </div>
             </nav>
-        </header> 
-
+        </header>
