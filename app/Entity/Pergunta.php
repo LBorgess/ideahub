@@ -97,6 +97,18 @@ class Pergunta
     }
 
     /**
+     * Método responsável por obter a quantidade de perguntas no banco de dados
+     * @param string $where
+     * @return integer
+     */
+    public static function getQuantidadePerguntas($where = null)
+    {
+        return (new Database('perguntas'))->select($where, null, null, ' COUNT(*) as qtd')
+            ->fetchObject()
+            ->qtd;
+    }
+
+    /**
      * Método responsável por buscar uma pergunta com base em seu ID
      * @param integer $id
      * @return Pergunta
