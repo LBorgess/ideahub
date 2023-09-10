@@ -16,14 +16,14 @@ if (isset($_GET['status'])) {
 $resultados = '';
 foreach ($perguntas as $pergunta) {
     $resultados .= '<tr>
-                        <td>' . $pergunta->perguntas_titulo . '</td>
-                        <td>' . $pergunta->perguntas_conteudo . '</td>
-                        <td>' . date('d/m/Y à\s H:i:s', strtotime($pergunta->perguntas_data)) . '</td>
+                        <td>' . $pergunta->titulo . '</td>
+                        <td>' . $pergunta->conteudo . '</td>
+                        <td>' . date('d/m/Y à\s H:i:s', strtotime($pergunta->data)) . '</td>
                         <td>
-                            <a class="text-light" href="editar.php?id=' . $pergunta->perguntas_id . '">
+                            <a class="text-light" href="editar.php?id=' . $pergunta->id . '">
                                 <button type="button" class="btn btn-primary">Editar</button">
                             <a/>
-                            <a class="text-light" href="excluir.php?id=' . $pergunta->perguntas_id . '">
+                            <a class="text-light" href="excluir.php?id=' . $pergunta->id . '">
                                 <button type="button" class="btn btn-danger">Excluir</button">
                             <a/>
                         </td>
