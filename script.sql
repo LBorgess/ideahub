@@ -38,6 +38,14 @@ CREATE TABLE respostas(
     FOREIGN KEY (usuarios_id) REFERENCES usuarios(usuarios_id)
 );
 
+/* DADOS PARA TESTES E VISUALIZAÇÃO */
+
+INSERT INTO `perguntas` (`perguntas_id`, `perguntas_titulo`, `perguntas_conteudo`, `perguntas_data`) VALUES
+	(NULL, 'Terra', 'Terra', '2023-09-09 23:25:34'),
+	(NULL, 'Fogo', 'Fogo', '2023-09-09 23:25:41'),
+	(NULL, 'Vento', 'Vento', '2023-09-09 23:26:09'),
+	(NULL, 'Chuva com vento', 'Ventou muito ontem à noite', '2023-09-09 23:26:26');
+
 /* DROP DAS TABELAS */
 
 -- DROP TABLE IF EXISTS respostas, perguntas, usuarios;
