@@ -32,6 +32,25 @@ foreach ($perguntas as $pergunta) {
 
 $resultados = strlen($resultados) ? $resultados : '<tr><td colspan=4 class="text-center">Nenhuma pergunta realizada</td></tr>';
 
+// PAGINAÇÃO
+
+// GETS
+unset($_GET['status']);
+unset($_GET['pagina']);
+$gets = http_build_query($_GET);
+
+
+
+$paginacao = '';
+$paginas = $obPagination->getPages();
+
+foreach ($paginas as $key => $pagina) {
+    $class = $pagina['atual'] ? 'btn-primary' : 'btn-light';
+    $paginacao .= '<a href="?pagina=' . $pagina['pagina'] . '&' . $gets . '">
+                        <button type="button" class="btn ' . $class . '">' . $pagina['pagina'] . '</button>
+                    </a>';
+}
+
 ?>
 
 <main>
@@ -52,17 +71,17 @@ $resultados = strlen($resultados) ? $resultados : '<tr><td colspan=4 class="text
 
                 <div class="col">
                     <label for="busca">Pesquisar pergunta</label>
-                    <input type="text" name="busca" id="busca" class="form-control" value="<?=$busca?>">
+                    <input type="text" name="busca" id="busca" class="form-control" value="<?= $busca ?>">
                 </div>
 
                 <!-- Filtros de perguntas já respondidas-->
-<!-- 
+                <!-- 
                 <div class="col">
                     <label for="status">Respondida</label>
-                    <select name="status" id="status" class="form-control">
+                    <select name="filtroStatus" id="status" class="form-control">
                         <option value="">Sim/Não</option>
-                        <option value="s" <?=$filtroStatus == 's' ? 'selected' : ''?>>Sim</option>
-                        <option value="n" <?=$filtroStatus == 'n' ? 'selected' : ''?>>Não</option>
+                        <option value="s" <?= $filtroStatus == 's' ? 'selected' : '' ?>>Sim</option>
+                        <option value="n" <?= $filtroStatus == 'n' ? 'selected' : '' ?>>Não</option>
                     </select>
                 </div>
  -->
@@ -90,6 +109,11 @@ $resultados = strlen($resultados) ? $resultados : '<tr><td colspan=4 class="text
             </tbody>
 
         </table>
+    </section>
+
+    <!-- Paginaçao -->
+    <section>
+        <?= $paginacao ?>
     </section>
 
 </main>
