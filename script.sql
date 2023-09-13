@@ -2,7 +2,7 @@
 
 DROP DATABASE IF EXISTS ideahub;
 
-CREATE DATABASE ideahub;
+CREATE DATABASE IF NOT EXISTS ideahub;
 
 USE ideahub;
 

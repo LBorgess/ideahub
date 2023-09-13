@@ -1,0 +1,28 @@
+main {
+    align-items: stretch;
+    padding: 0 6rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.pPrincipal {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    top: 3rem;
+}
+
+.pPrincipal h2 {
+    font-size: 1.5rem;
+}
+
+.pInput {
+    margin: 0.5rem 0;
+}
+

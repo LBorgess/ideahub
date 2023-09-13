@@ -1,0 +1,62 @@
+:root {
+    /* FUNDOS --------------------------- */
+
+    --fundo: green;
+    --fundo-header: #010409;
+    --fundo-barra-pesquisa: #010409;
+
+    /*-------------------------------------*/
+
+    /* TEXTOS ----------------------------------*/
+
+    --titulo: #c9d1d9;
+    /* texto da página no geral */
+    --texto: #c9d1d9;
+    /* texto do menu de cima */
+    --texto-header: #c9d1d9;
+    /* cor do texto quando digita no input */
+    --texto-input: white;
+
+    /*------------------------------------------*/
+
+    /* LINKS, ICONES NO HEADER ----------------- */
+
+    --link: #c9d1d9;
+    /* quando o mouse ta em cima */
+    --link-hover: white;
+
+    /* ----------------------------------------- */
+
+
+
+
+    /* PLACEHOLDERS -------------------------------------------------------*/
+
+    /* textos na barra de pesquisa e nos inputs das telas login e cadastro */
+    --placeholder: #c9d1d9;
+    --placeholder-focus: white;
+    --placeholder-input-focus: #c9d1d9;
+    /* cor da data no card da pergunta */
+    --placeholder-date: gray;
+
+    /*----------------------------------------------------------------------*/
+
+    /* CORES DAS BORDAS -----------------------*/
+
+    --borda-header: #c9d1d9;
+    --borda-barra-pesquisa: #c9d1d9;
+    /* inputs das telas de login e cadastro */
+    --borda-input: #c9d1d9;
+    --borda-card: #c9d1d9;
+
+    /*----------------------------------------*/
+
+    /* OUTROS --------------*/
+    
+    /* icones do card */
+    --icone: #38bdf8;
+    --hamburguer: #c9d1d9;
+
+    /*----------------------*/
+
+}

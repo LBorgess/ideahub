@@ -56,7 +56,15 @@ if (isset($_POST['acao'])) {
     }
 }
 
+// inclue head-links primeiro para adicionar CSS especifico
+include __DIR__ . '/includes/head-links.php';
 
-include __DIR__ . '/includes/header.php';
+?>
+
+<link rel="stylesheet" href="./includes/css/autenticacao.css">
+
+<?php 
+
+// include __DIR__ . '/includes/header.php'; - pagina login não tem o header
 include __DIR__ . '/includes/formulario-login.php';
 include __DIR__ . '/includes/footer.php';
