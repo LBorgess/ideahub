@@ -49,6 +49,7 @@ $alertaCadastro = strlen($alertaCadastro) ? '<div class="alert alert-danger">' .
             </div>
         </div>
     </form>
+    
 </main>
 
 
