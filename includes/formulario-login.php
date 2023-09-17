@@ -19,14 +19,14 @@ $alertaLogin = strlen($alertaLogin) ? '<div class="alert alert-danger">' . $aler
 
         <!-- input 1 -->
         <div class="auCaixa-input">
-            <input type="email" name="email" placeholder=" " required="required">
+            <input type="email" name="email" placeholder=" " value="<?php if (isset($_POST['acao'])) echo htmlspecialchars($_POST['email'])?>">
             <span>
                 <i class="material-symbols-outlined iconGoogle">mail</i>
                 Email
             </span>
         </div>
         <div class="auCaixa-input">
-            <input type="password" name="senha" placeholder=" " required="required">
+            <input type="password" name="senha" placeholder=" ">
             <span>
                 <i class="material-symbols-outlined iconGoogle">lock</i>
                 Senha
