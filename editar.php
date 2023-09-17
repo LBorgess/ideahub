@@ -2,8 +2,8 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-define('TITLE', 'Qual a sua pergunta?');
-define('BUTTON', 'Perguntar');
+define('TITLE', 'Editar pergunta');
+define('BUTTON', 'Editar');
 
 use \App\Entity\Pergunta;
 use \App\Session\Login;
@@ -11,15 +11,27 @@ use \App\Session\Login;
 // OBRIGA O USUÁRIO A ESTAR LOGADO
 Login::requireLogin();
 
-// INSTÂNCIA DA PERGUNTA
-$obPergunta = new Pergunta;
+// VALIDAÇÃO DO ID DA PERGUNTA
+if (!isset($_GET['id']) or !is_numeric($_GET['id'])) {
+    header('location: index.php?status=error');
+    exit;
+}
+
+// CONSULTA A PERGUNTA
+$obPergunta = Pergunta::getPergunta($_GET['id']);
+
+// VALIDA SE A PERGUNTA EXISTE
+if (!$obPergunta instanceof Pergunta) {
+    header('location: index.php?status=error');
+    exit;
+}
 
 // Verifica se as informações de `cadastrar.php` foram recebidas com sucesso
 if (isset($_POST['titulo'], $_POST['conteudo'])) {
     // Instância a Pergunta
     $obPergunta->titulo   = $_POST['titulo'];
     $obPergunta->conteudo = $_POST['conteudo'];
-    $obPergunta->cadastrar();
+    $obPergunta->atualizar();
 
     // RETORNA PARA O INDEX
     header('location: index.php?status=success');

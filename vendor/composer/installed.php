@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'lborgess/ideahub',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '944deb2d2136cbbaffe09622a42bf9723c7f0328',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'lborgess/ideahub' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '944deb2d2136cbbaffe09622a42bf9723c7f0328',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
