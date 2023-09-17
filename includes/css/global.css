@@ -23,7 +23,7 @@
 
     /* LINKS, ICONES NO HEADER ----------------- */
 
-    --link: #c9d1d9;
+    --link: #132f4b;
     /* quando o mouse ta em cima */
     --link-hover: white;
 
@@ -103,10 +103,7 @@ h1, h2 {
 /*--------------*/
 
 
-
-
-
-/* --------- header ------------*/
+/* header */
 
 .logo {
     text-decoration: none;

@@ -1,6 +1,6 @@
 <?php
 
-$alertaLogin = strlen($alertaLogin) ? '<div class="alert alert-danger">' . $alertaLogin . '</div>' : '';
+$alertaCadastro = strlen($alertaCadastro) ? '<div class="alert alert-danger">' . $alertaCadastro . '</div>' : '';
 
 ?>
 
@@ -13,11 +13,18 @@ $alertaLogin = strlen($alertaLogin) ? '<div class="alert alert-danger">' . $aler
     </hgroup>
     <!-- Formulario de login -->
     <form class="auCaixa-form" method="post">
-        <h2>Login</h2>
+        <h2>Cadastro</h2>
 
-        <?= $alertaLogin ?>
+        <?= $alertaCadastro ?>
 
         <!-- input 1 -->
+        <div class="auCaixa-input">
+            <input type="text" name="nome" placeholder=" " required>
+            <span>
+                <i class="material-symbols-outlined iconGoogle">person</i>
+                Nome de usuario
+            </span>
+        </div>
         <div class="auCaixa-input">
             <input type="email" name="email" placeholder=" " required="required">
             <span>
@@ -34,13 +41,13 @@ $alertaLogin = strlen($alertaLogin) ? '<div class="alert alert-danger">' . $aler
         </div>
         <div class="auBotoes">
             <!-- Botão de enviar -->
-            <input type="submit" class="btn-primary px-4 " name="acao" value="logar">
+            <input type="submit" class="btn-primary px-4 " name="acao" value="Cadastrar">
             <!-- extra -->
             <div class="auCaixa-extra px-2">
                 <span class="auExtra">
-                    Não tem conta?
-                    <a class="auExtra auLink" tabindex="0" href="cadastro.php">
-                        Cadastrar
+                    Já tem conta?
+                    <a class="auExtra auLink" tabindex="0" href="login.php">
+                        Entrar
                     </a>
                 </span>
             </div>
