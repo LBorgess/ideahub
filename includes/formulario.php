@@ -1,11 +1,4 @@
 <main>
-    <div class="nav justify-content-end">
-        <section">
-            <a href="index.php">
-                <button class="btn btn-info">Voltar</button>
-            </a>
-        </section>        
-    </div>
 
     <h4 class="mt-3"><?=TITLE?></h4>
 

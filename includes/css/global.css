@@ -17,13 +17,13 @@
     /* texto do menu de cima */
     --texto-header: #c9d1d9;
     /* cor do texto quando digita no input */
-    --texto-input: white;
+    --texto-input: black;
 
     /*------------------------------------------*/
 
     /* LINKS, ICONES NO HEADER ----------------- */
 
-    --link: #132f4b;
+    --link: #c9d1d9;
     /* quando o mouse ta em cima */
     --link-hover: white;
 
@@ -62,7 +62,6 @@
     /*----------------------*/
 
 }
-
 
 * {
     padding: 0px;
@@ -103,7 +102,10 @@ h1, h2 {
 /*--------------*/
 
 
-/* header */
+
+
+
+/* --------- header ------------*/
 
 .logo {
     text-decoration: none;
@@ -137,6 +139,7 @@ h1, h2 {
     align-items: center;
     justify-self: center;
     padding: 0 0.1rem;
+    align-self: baseline;
 
 }
 
@@ -198,12 +201,12 @@ h1, h2 {
     color: var(--link-hover);
 }
 
-.mudar-tema {
+/* .mudar-tema {
     background: none;
     border: none;
     color: var(--link);
     cursor: pointer;
-}
+} */
 
 .hamburguer {
     display: none;
@@ -280,7 +283,7 @@ main {
 .cardFooter {
     display: flex;
     border-top: 1px solid var(--borda);
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 0.5rem;
 }

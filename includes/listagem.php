@@ -15,19 +15,28 @@ if (isset($_GET['status'])) {
 
 $resultados = '';
 foreach ($perguntas as $pergunta) {
-    $resultados .= '<tr>
-                        <td>' . $pergunta->titulo . '</td>
-                        <td>' . $pergunta->conteudo . '</td>
-                        <td>' . date('d/m/Y à\s H:i:s', strtotime($pergunta->data)) . '</td>
-                        <td>
+    $resultados .= ' <article class="card">' .
+                        
+                        // onde fica o usuario e a data
+                        '<header class="cardHeader">
+                            <div class="caixa-usuario">
+                                <span class="txtUsuario">' . $usuarioLogado['nome'] . '</span>
+                            </div>
+
+                            <span class="date">' . date('d/m/Y à\s H:i:s', strtotime($pergunta->data))  .'</span>
+                        </header>
+
+                        <h2 class="cardTitulo" maxlength="10">' . $pergunta->titulo .  '
+                        <p class="cardText">' . $pergunta->conteudo . '</p>
+                        <footer class="cardFotter">
                             <a class="text-light" href="editar.php?id=' . $pergunta->id . '">
-                                <button type="button" class="btn btn-primary">Editar</button">
+                                <button type="button" class="btn-primary px-2 mx-3">Editar</button">
                             <a/>
                             <a class="text-light" href="excluir.php?id=' . $pergunta->id . '">
-                                <button type="button" class="btn btn-danger">Excluir</button">
+                                <button type="button" class="btn-danger px-2 mx-3">Excluir</button">
                             <a/>
-                        </td>
-                    </tr>';
+                        </footer>
+                    </article>';
 }
 
 $resultados = strlen($resultados) ? $resultados : '<tr><td colspan=4 class="text-center">Nenhuma pergunta realizada</td></tr>';
@@ -57,14 +66,8 @@ foreach ($paginas as $key => $pagina) {
 
     <?= $mensagem ?>
 
-    <section class="nav justify-content-end">
-        <a href="cadastrar.php">
-            <button class="btn btn-info">Nova pergunta</button>
-        </a>
-    </section>
-
     <!-- Campo de busca -->
-    <section>
+    <!-- <section>
         <form method="get">
 
             <div class="row my-4">
@@ -72,9 +75,9 @@ foreach ($paginas as $key => $pagina) {
                 <div class="col">
                     <label for="busca">Pesquisar pergunta</label>
                     <input type="text" name="busca" id="busca" class="form-control" value="<?= $busca ?>">
-                </div>
+                </div> -->
 
-                <!-- Filtros de perguntas já respondidas-->
+                <!-- Filtros de perguntas já respondidas -->
                 <!-- 
                 <div class="col">
                     <label for="status">Respondida</label>
@@ -85,25 +88,18 @@ foreach ($paginas as $key => $pagina) {
                     </select>
                 </div>
  -->
-                <div class="col d-flex align-items-end">
+                <!-- <div class="col d-flex align-items-end">
                     <button type="submit" class="btn btn-primary">Pesquisar</button>
                 </div>
             </div>
 
         </form>
-    </section>
+    </section> -->
 
     <!-- Listagem das perguntas -->
     <section>
         <table class="table bg-light mt-3">
-            <thead>
-                <tr>
-                    <th>Titulo</th>
-                    <th>Conteúdo</th>
-                    <th>Data</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
+      
             <tbody>
                 <?= $resultados ?>
             </tbody>

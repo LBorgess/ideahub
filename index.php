@@ -38,6 +38,7 @@ $obPagination = new Pagination($quantidadePerguntas, $_GET['pagina'] ?? 1, 10);
 // Obtém a listagem das perguntas
 $perguntas = Pergunta::getPerguntas($where, null, $obPagination->getLimit());
 
+include __DIR__.'/includes/head-links.php';
 include __DIR__.'/includes/header.php';
 include __DIR__.'/includes/listagem.php';
 include __DIR__.'/includes/footer.php';
