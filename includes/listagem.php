@@ -15,7 +15,7 @@ if (isset($_GET['status'])) {
 
 $resultados = '';
 foreach ($perguntas as $pergunta) {
-    $resultados .= ' <article class="card">' .
+    $resultados .= '<article class="card">' .
                         
                         // onde fica o usuario e a data
                         '<header class="cardHeader">
@@ -23,18 +23,15 @@ foreach ($perguntas as $pergunta) {
                                 <span class="txtUsuario">' . $usuarioLogado['nome'] . '</span>
                             </div>
 
-                            <span class="date">' . date('d/m/Y à\s H:i:s', strtotime($pergunta->data))  .'</span>
+                            <span class="date">' . date('d/m/Y', strtotime($pergunta->data))  .'</span>
                         </header>
 
                         <h2 class="cardTitulo" maxlength="10">' . $pergunta->titulo .  '
                         <p class="cardText">' . $pergunta->conteudo . '</p>
-                        <footer class="cardFotter">
-                            <a class="text-light" href="editar.php?id=' . $pergunta->id . '">
-                                <button type="button" class="btn-primary px-2 mx-3">Editar</button">
-                            <a/>
-                            <a class="text-light" href="excluir.php?id=' . $pergunta->id . '">
-                                <button type="button" class="btn-danger px-2 mx-3">Excluir</button">
-                            <a/>
+                        
+                        <footer class="cardFooter">
+                            <a href="editar.php?id=' . $pergunta->id . '" class="btn-primary p-2 mx-3">editar</a>
+                            <a href="excluir.php?id=' . $pergunta->id . '" class="btn-danger p-2 mx-3">excluir</a>
                         </footer>
                     </article>';
 }
@@ -67,18 +64,16 @@ foreach ($paginas as $key => $pagina) {
     <?= $mensagem ?>
 
     <!-- Campo de busca -->
-    <!-- <section>
-        <form method="get">
+        <form method="get" class="">
 
-            <div class="row my-4">
+            <div class="row">
 
                 <div class="col">
                     <label for="busca">Pesquisar pergunta</label>
                     <input type="text" name="busca" id="busca" class="form-control" value="<?= $busca ?>">
-                </div> -->
+                </div>
 
                 <!-- Filtros de perguntas já respondidas -->
-                <!-- 
                 <div class="col">
                     <label for="status">Respondida</label>
                     <select name="filtroStatus" id="status" class="form-control">
@@ -87,14 +82,12 @@ foreach ($paginas as $key => $pagina) {
                         <option value="n" <?= $filtroStatus == 'n' ? 'selected' : '' ?>>Não</option>
                     </select>
                 </div>
- -->
-                <!-- <div class="col d-flex align-items-end">
+                <div class="col d-flex align-items-end">
                     <button type="submit" class="btn btn-primary">Pesquisar</button>
                 </div>
             </div>
 
         </form>
-    </section> -->
 
     <!-- Listagem das perguntas -->
     <section>

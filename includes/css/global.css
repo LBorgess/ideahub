@@ -17,7 +17,7 @@
     /* texto do menu de cima */
     --texto-header: #c9d1d9;
     /* cor do texto quando digita no input */
-    --texto-input: black;
+    --texto-input: white;
 
     /*------------------------------------------*/
 
@@ -228,10 +228,13 @@ h1, h2 {
 
 /* index */
 
-main {
+main, .formulario {
     position: absolute;
     top: 3rem;
     width: 100%;
+}
+
+main {
     display: flex;
     justify-content: center;
     align-items: center;

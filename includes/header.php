@@ -10,10 +10,10 @@
             </a>
 
             <!-- nav item 2 -->
-            <div class="pesquisa">
+            <form class="pesquisa">
                 <input class="barraPesquisa" placeholder="Pesquisar..." type="search">
                 <span class="icones  iconePesquisa material-symbols-outlined">search</span>
-            </div>
+            </form>
 
             <ul class="nav-menu">
                 <li class="nav-item">
