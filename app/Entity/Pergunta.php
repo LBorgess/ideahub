@@ -92,6 +92,8 @@ class Pergunta
      */
     public static function getPerguntas($where = null, $order = null, $limit = null)
     {
+        // EXIBE AS PERGUNTAS ORDENADO PELA DATA DE CRIAÇÃO
+        $order = 'data DESC';
         return (new Database('perguntas'))->select($where, $order, $limit)
             ->fetchAll(PDO::FETCH_CLASS, self::class);
     }
