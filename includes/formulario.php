@@ -5,8 +5,8 @@
     <form method="post">
         
         <div class="form-group">
-            <label for="busca">Titulo da pergunta</label>
-            <input type="text" name="busca" id="busca" class="form-control" value="<?= $busca ?>" required>
+            <label for="titulo">Titulo da pergunta</label>
+            <input type="text" name="titulo" id="titulo" class="form-control" value="<?= $obPergunta->titulo?>" required>
             <small class="form-text text-muted">Use sua criatividade</small>
         </div>
 

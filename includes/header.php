@@ -10,10 +10,10 @@
             </a>
 
             <!-- nav item 2 -->
-            <form class="pesquisa">
-                <input class="barraPesquisa" placeholder="Pesquisar..." type="search">
+            <!-- <form class="pesquisa" method="get">
+                <input class="barraPesquisa" placeholder="Pesquisar..." type="search" value="<?=$busca?>">
                 <span class="icones  iconePesquisa material-symbols-outlined">search</span>
-            </form>
+            </form> -->
 
             <ul class="nav-menu">
                 <li class="nav-item">

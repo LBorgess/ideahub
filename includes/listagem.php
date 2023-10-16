@@ -64,9 +64,9 @@ foreach ($paginas as $key => $pagina) {
     <?= $mensagem ?>
 
     <!-- Campo de busca -->
-        <form method="get" class="">
+        <form method="get" class="formPesquisa">
 
-            <div class="row">
+            <div class="text-center">
 
                 <div class="col">
                     <label for="busca">Pesquisar pergunta</label>
@@ -86,7 +86,6 @@ foreach ($paginas as $key => $pagina) {
                     <button type="submit" class="btn btn-primary">Pesquisar</button>
                 </div>
             </div>
-
         </form>
 
     <!-- Listagem das perguntas -->
