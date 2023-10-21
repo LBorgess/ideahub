@@ -38,6 +38,5 @@ $usuario = $usuarioLogado ?
     <link rel="stylesheet" href="./includes/fontawesome/css/all.min.css">
 
     <!-- estilos -->
-    <link rel="stylesheet" href="./includes/css/constants.css">
     <link rel="stylesheet" href="./includes/css/global.css">
     

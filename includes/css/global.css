@@ -23,7 +23,7 @@
 
     /* LINKS, ICONES NO HEADER ----------------- */
 
-    --link: #132f4b;
+    --link: #c9d1d9;
     /* quando o mouse ta em cima */
     --link-hover: white;
 
@@ -62,7 +62,6 @@
     /*----------------------*/
 
 }
-
 
 * {
     padding: 0px;
@@ -103,7 +102,10 @@ h1, h2 {
 /*--------------*/
 
 
-/* header */
+
+
+
+/* --------- header ------------*/
 
 .logo {
     text-decoration: none;
@@ -131,12 +133,17 @@ h1, h2 {
     box-sizing: border-box;
 }
 
+.formPesquisa {
+    margin: 0 12rem;
+}
+
 .pesquisa {
     position: relative;
     display: flex;
     align-items: center;
     justify-self: center;
     padding: 0 0.1rem;
+    align-self: baseline;
 
 }
 
@@ -198,12 +205,12 @@ h1, h2 {
     color: var(--link-hover);
 }
 
-.mudar-tema {
+/* .mudar-tema {
     background: none;
     border: none;
     color: var(--link);
     cursor: pointer;
-}
+} */
 
 .hamburguer {
     display: none;
@@ -225,10 +232,13 @@ h1, h2 {
 
 /* index */
 
-main {
+main, .formulario {
     position: absolute;
     top: 3rem;
     width: 100%;
+}
+
+main {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -280,7 +290,7 @@ main {
 .cardFooter {
     display: flex;
     border-top: 1px solid var(--borda);
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 0.5rem;
 }
@@ -386,7 +396,7 @@ main {
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 2.3rem;
+        top: 2rem;
         gap: 0;
         flex-direction: column;
         justify-content: center;
