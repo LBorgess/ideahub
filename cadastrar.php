@@ -27,5 +27,5 @@ if (isset($_POST['titulo'], $_POST['conteudo'])) {
 }
 
 include __DIR__ . '/includes/header.php';
-include __DIR__ . '/includes/formulario.php';
+include __DIR__ . '/includes/formulario-pergunta.php';
 include __DIR__ . '/includes/footer.php';

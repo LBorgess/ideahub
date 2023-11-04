@@ -39,8 +39,6 @@ unset($_GET['status']);
 unset($_GET['pagina']);
 $gets = http_build_query($_GET);
 
-
-
 $paginacao = '';
 $paginas = $obPagination->getPages();
 

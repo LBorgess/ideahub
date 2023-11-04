@@ -18,6 +18,13 @@ class Pergunta
     public $id;
 
     /**
+     * Código de identificação do usuário que realizou
+     * a pergunta
+     * @var integer
+     */
+    public $usuario_id;
+
+    /**
      * Título da pergunta
      * @var string
      */
