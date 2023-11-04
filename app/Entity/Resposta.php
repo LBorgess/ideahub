@@ -28,7 +28,7 @@ class Resposta
      * Código de identificação do usuário que respondeu
      * @var integer
      */
-    # public $usuario_id;
+    public $usuario_id;
 
     /**
      * Conteúdo da resposta
