@@ -28,7 +28,7 @@ class Login
     {
         self::init();
 
-        // RETORNA OS DADIS DO USUARIO
+        // RETORNA OS DADOS DO USUARIO
         return self::isLogged() ? $_SESSION['usuario'] : null;
     }
 
