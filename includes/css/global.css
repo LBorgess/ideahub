@@ -5,6 +5,7 @@
 
     --fundo: #0d1117;
     --fundo-header: #010409;
+    --fundo-header-pergunta: rgb(21, 26, 31);
     --fundo-barra-pesquisa: #010409;
 
     /*-------------------------------------*/
@@ -255,20 +256,26 @@ main {
 .card {
     min-width: 18rem;
     max-width: 18rem;
-    border: 1px solid var(--borda-card);
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin: 1rem;
-    padding: 0.5rem;
-    background-color: #21262d !important;
+    background-color: var(--fundo);
+    transition: 0.2s;
+}
+
+.card:hover {
+    border: 1px solid var(--borda-card);
 }
 
 .cardHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0.5rem 0 0.5rem;
+    background-color: var(--fundo-header-pergunta);
+    padding: 0.3rem;
+    border-top-right-radius: .25rem;
+    border-top-left-radius: .25rem;
 }
 
 .txtUsuario {
@@ -285,6 +292,7 @@ main {
     text-align: justify;
     word-wrap: break-word;
     color: var(--texto);
+    padding-inline: .50rem;
 }
 
 .cardFooter {
@@ -368,7 +376,6 @@ main {
     /*----------------------- */
 
     .card {
-        padding: 0 1rem;
         min-width: 32rem;
         max-width: 32rem;
     }
