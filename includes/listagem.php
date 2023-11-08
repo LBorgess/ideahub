@@ -26,12 +26,12 @@ foreach ($perguntas as $pergunta) {
                             <span class="date">' . date('d/m/Y', strtotime($pergunta->data))  .'</span>
                         </header>
 
-                        <h2 class="cardTitulo" maxlength="10">' . $pergunta->titulo .  '
+                        <h2 class="cardTitulo" maxlength="10">' . $pergunta->titulo .  ' </h2>
                         <p class="cardText">' . $pergunta->conteudo . '</p>
                         
                         <footer class="cardFooter">
-                            <a href="editar.php?id=' . $pergunta->id . '" class="btn-primary p-2 mx-3">editar</a>
-                            <a href="excluir.php?id=' . $pergunta->id . '" class="btn-danger p-2 mx-3">excluir</a>
+                            <a href="editar.php?id=' . $pergunta->id . '" class="btn btn-outline-primary p-2 mx-3">editar</a>
+                            <a href="excluir.php?id=' . $pergunta->id . '" class="btn btn-outline-danger p-2 mx-3">excluir</a>
                         </footer>
                     </article>';
 }

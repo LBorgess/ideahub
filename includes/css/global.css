@@ -290,8 +290,7 @@ main {
 .cardFooter {
     display: flex;
     border-top: 1px solid var(--borda);
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
     padding: 0.5rem;
 }
 
