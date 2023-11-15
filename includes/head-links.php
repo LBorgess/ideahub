@@ -40,3 +40,5 @@ $usuario = $usuarioLogado ?
     <!-- estilos -->
     <link rel="stylesheet" href="./includes/css/global.css">
     
+    <!-- icones bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">

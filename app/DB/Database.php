@@ -27,7 +27,7 @@ class Database
      * Usuário do banco de dados
      * @var string
      */
-    const USER = 'root';
+    const USER = 'kayo';
 
     /**
      * Senha de acesso ao banco de dados

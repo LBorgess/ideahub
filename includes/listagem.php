@@ -30,8 +30,10 @@ foreach ($perguntas as $pergunta) {
                         <p class="cardText">' . $pergunta->conteudo . '</p>
                         
                         <footer class="cardFooter">
-                            <a href="editar.php?id=' . $pergunta->id . '" class="btn btn-outline-primary p-2 mx-3">editar</a>
-                            <a href="excluir.php?id=' . $pergunta->id . '" class="btn btn-outline-danger p-2 mx-3">excluir</a>
+                            <a href="#"><i class="bi bi-chat-left-text-fill"></i></a>
+                            <i class="bi bi-hand-thumbs-up-fill"></i>
+                            <!-- <a href="editar.php?id=' . $pergunta->id . '" class="btn btn-outline-primary p-2 mx-3">editar</a>
+                            <a href="excluir.php?id=' . $pergunta->id . '" class="btn btn-outline-danger p-2 mx-3">excluir</a> -->
                         </footer>
                     </article>';
 }
