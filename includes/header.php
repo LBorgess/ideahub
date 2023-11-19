@@ -7,7 +7,7 @@ $usuarioLogado = Login::getUsuarioLogado();
 
 // DETALHES DO USUÁRIO
 $usuario = $usuarioLogado ?
-    $usuarioLogado['nome'] . ' <a href="logout.php" class="font-weight-bold ml-4"> Sair </a>' :
+    $usuarioLogado['nome'] . ' <a href="logout.php" class="font-weight-bold ml-4">&nbsp&nbspSair</a>' :
     'Visitante <a href="login.php" class="font-weight-bold ml-4 p-2">Entrar</a>';
 
 ?>
