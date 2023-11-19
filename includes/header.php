@@ -10,6 +10,18 @@ $usuario = $usuarioLogado ?
     $usuarioLogado['nome'] . ' <a href="logout.php" class="font-weight-bold ml-4">&nbsp&nbspSair</a>' :
     'Visitante <a href="login.php" class="font-weight-bold ml-4 p-2">Entrar</a>';
 
+// CAMPO DE PESQUISA
+
+$pesquisa = $usuarioLogado ?
+    '<section>
+        <form method="get">
+            <div class="row my-4">
+                <div class="col">
+                    <input type="text" name="busca" id="busca" class="form-control" placeholder="Pesquisar">
+                </div>
+        </form>
+    </section>' : '';
+
 ?>
 
 <!doctype html>
@@ -42,12 +54,15 @@ $usuario = $usuarioLogado ?
     <div class="container">
         <header id="header">
             <a id="logo" href="index.php">Ideahub</a>
+
+            <?= $pesquisa ?>
+
             <nav id="nav">
                 <button aria-label="Abrir menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">Menu
                     <span id="hamburger"></span>
                 </button>
-                    <div class="d-flex justify-content-start text-dark">
-                        <?= $usuario ?>
-                    </div>
+                <div class="d-flex justify-content-start text-dark">
+                    <?= $usuario ?>
+                </div>
             </nav>
         </header>
