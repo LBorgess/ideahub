@@ -2,7 +2,7 @@
     <div class="nav justify-content-end">
         <section">
             <a href="index.php">
-                <button class="btn btn-info">Voltar</button>
+                <button class="btn btn-info mt-2">Voltar</button>
             </a>
         </section>        
     </div>

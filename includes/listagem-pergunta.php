@@ -5,26 +5,20 @@ $mensagem = '';
 if (isset($_GET['status'])) {
     switch ($_GET['status']) {
         case 'success':
-            $mensagem = '<div class="alert alert-success">Ação executada com sucesso</div>';
+            $mensagem = '<div class="alert alert-success mt-2">Ação executada com sucesso</div>';
             break;
         case 'error':
-            $mensagem = '<div class="alert alert-danger">Ação não executada</div>';
+            $mensagem = '<div class="alert alert-danger mt-2">Ação não executada</div>';
             break;
     }
 }
 
 $resultados = '';
 foreach ($perguntas as $pergunta) {
-    $resultados .= '<tr>
-                        <td>' . $pergunta->titulo . '</td>
-                        <td>' . $pergunta->conteudo . '</td>
-                        <td>' . date('d/m/Y à\s H:i:s', strtotime($pergunta->data)) . '</td>
+    $resultados .= '<tr>                       
                         <td>
-                            <a class="text-light" href="editar.php?id=' . $pergunta->id . '">
-                                <button type="button" class="btn btn-primary">Editar</button">
-                            <a/>
-                            <a class="text-light" href="excluir.php?id=' . $pergunta->id . '">
-                                <button type="button" class="btn btn-danger">Excluir</button">
+                            <a class="" href="resposta.php?id=' . $pergunta->id . '">
+                                '.$pergunta->titulo.'
                             <a/>
                         </td>
                     </tr>';
@@ -57,51 +51,18 @@ foreach ($paginas as $key => $pagina) {
 
     <section class="nav justify-content-end">
         <a href="cadastrar.php">
-            <button class="btn btn-info">Nova pergunta</button>
+            <button class="btn btn-info mt-2">Nova pergunta</button>
         </a>
-    </section>
-
-    <!-- Campo de busca -->
-    <section>
-        <form method="get">
-
-            <div class="row my-4">
-
-                <div class="col">
-                    <label for="busca">Pesquisar pergunta</label>
-                    <input type="text" name="busca" id="busca" class="form-control" value="<?= $busca ?>">
-                </div>
-
-                <!-- Filtros de perguntas já respondidas-->
-                <!-- 
-                <div class="col">
-                    <label for="status">Respondida</label>
-                    <select name="filtroStatus" id="status" class="form-control">
-                        <option value="">Sim/Não</option>
-                        <option value="s" <?= $filtroStatus == 's' ? 'selected' : '' ?>>Sim</option>
-                        <option value="n" <?= $filtroStatus == 'n' ? 'selected' : '' ?>>Não</option>
-                    </select>
-                </div>
- -->
-                <div class="col d-flex align-items-end">
-                    <button type="submit" class="btn btn-primary">Pesquisar</button>
-                </div>
-            </div>
-
-        </form>
     </section>
 
     <!-- Listagem das perguntas -->
     <section>
         <table class="table bg-light mt-3">
-            <thead>
+            <!-- <thead>
                 <tr>
-                    <th>Titulo</th>
-                    <th>Conteúdo</th>
-                    <th>Data</th>
-                    <th>Ações</th>
+                    <th></th>
                 </tr>
-            </thead>
+            </thead> -->
             <tbody>
                 <?= $resultados ?>
             </tbody>

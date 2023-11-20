@@ -64,4 +64,14 @@ class Usuario
     {
         return (new Database('usuarios'))->select('email = "'.$email.'"')->fetchObject(self::class);
     }
+
+    /**
+     * Método responsável por retornar uma instância de usuário baseado em seu ID
+     * @param integer $id
+     * @return Usuario
+     */
+    public static function getUsuarioByID($id)
+    {
+        return (new Database('usuarios'))->select('id = "'. $id.'"')->fetchObject(self::class);
+    }
 }
