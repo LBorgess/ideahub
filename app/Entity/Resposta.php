@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\DB\Database;
 use \PDO;
+use App\Session\Login;
+use App\Entity\Pergunta;
 
 /**
  * Classe responsável por abstratir a parte de incluir as respostas das perguntas
@@ -49,14 +51,22 @@ class Resposta
     public function cadastrar()
     {
         // DATETIME
-        date_default_timezone_get('America/Sao_Paulo');
+        date_default_timezone_set('America/Sao_Paulo');
         $this->data = date('Y-m-d H:i:s');
 
         // INSTÂNCIA DO BANCO DE DADOS
         $obDatabase = new Database('respostas');
 
+        $this->perguntas_id = $_GET['id'];
+
+        // USUÁRIO LOGADO
+        $user = Login::getUsuarioLogado();
+        $this->usuario_id = $user['id'];
+
         // ARRAY DE CHAVE-VALOR DAS INFORMAÇÕES QUE SERÃO INSERIDAS NO BANCO DE DADOS
         $this->id = $obDatabase->insert([
+            'perguntas_id' => $this->perguntas_id,
+            'usuarios_id' => $this->usuario_id,
             'conteudo' => $this->conteudo,
             'data'     => $this->data
         ]);
