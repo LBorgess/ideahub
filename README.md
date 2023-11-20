@@ -1,23 +1,16 @@
-# IDEAHUB
+# Ideahub
+## Feito por alunos para alunos
 
-## Estrutura das pastas
+![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
 
-- app: Contém as classes desenvolvidas para o projeto, o autoload vê essa pasta;
-- includes: Contém arquivos que serão utilizados por padrão em diversas partes do sistema
-	- `header.php`: cabeçalho da página;
-	- `footer.php`: rodapé da página
-	- `listagem.php`: exibirá as perguntas
-	- `formulario.php`:  realizar a pergunta
-- vendor: Arquivos criados pelo composer para o autoload;  
 
-## Arquivos
+Nosso objetivo foi desenvolver uma plataforma onde os alunos da Etec pudessem interagir e compartilhar experiências, dúvidas e conhecimento. Pois compartilhando o que se sabe ajuda a si e ao outro. 
 
-- `composer.json` e `composer.lock`: Configura o autoload das classes do projeto, não há necessidade de executar, pois a pasta vendor já existe;
-- `cadastrar.php`: Resposável pelo cadastramento de uma nova pergunta;
-- `index.php` : Página inicial do nosso projeto;
-- `script.sql`: schema de contrução do nosso banco de dados  
+## Colaboradores
 
-## Referências
+| ![David Santos](https://github.com/dvctrl.png?size=50) | ![Débora Sena](https://github.com/dsena205.png?size=50) | ![Kayo Victor](https://github.com/kayoGc.png?size=50) | ![Lucas Borges](https://github.com/LBorgess.png?size=50)
+| --- | --- | --- | --- |
+| [David Santos](https://github.com/dvctrl)| [Débora Sena](https://github.com/dsena205) | [Kayo Victor](https://github.com/kayoGc) | [Lucas Borges](https://github.com/LBorgess) |
 
-- [Bootstrap v5.0](https://getbootstrap.com/docs/5.0/getting-started/introduction/);
-- [Font Awesome v6.4 Free](https://fontawesome.com/v6/search)
