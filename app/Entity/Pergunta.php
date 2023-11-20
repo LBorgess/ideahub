@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\DB\Database;
 use \PDO;
+use App\Session\Login;
 
 /**
  * Class responsável por abstratir a parte de incluir as perguntas no banco de dados
@@ -57,8 +58,13 @@ class Pergunta
         // INSERIR A NOVA PERGUNTA NO BANCO DE DADOS
         $obDatabase = new Database('perguntas');
 
+        // USUÁRIO LOGADO
+        $user = Login::getUsuarioLogado();
+        $this->usuario_id = $user['id'];
+
         // ARRAY DO TIPO CHAVE-VALOR QUE VAI INSERIR OS DADOS NO BANCO
         $this->id = $obDatabase->insert([
+            'usuarios_id' => $this->usuario_id,
             'titulo'   => $this->titulo,
             'conteudo' => $this->conteudo,
             'data'     => $this->data
