@@ -10,6 +10,7 @@ use \App\Entity\Resposta;
 
 // OBTÉM NOME DO USUÁRIO QUE VEZ A PERGUNTA
 $username = Login::getUsuarioLogado();
+$username = $username['nome'];
 
 // OBRIGA O USUÁRIO A ESTAR LOGADO
 Login::requireLogin();
@@ -32,16 +33,21 @@ if (!$obPergunta instanceof Pergunta) {
     exit;
 }
 
+// AUTOR DA PERGUNTA
+
+
 // TRATAMENTO DA RESPOSTA
 if (isset($_POST['conteudo'])) {
     $obResposta->conteudo = $_POST['conteudo'];
     $obResposta->cadastrar();
 
-    // RETORNA PARA O INDEX
-    header('location: index.php?status=success');
-    exit;
+    # RETORNA PARA O INDEX
+    # header('location: index.php?status=success');
+    # exit;
 }
 
+
+// CONDIÇÃO DE 'FILTRO' DAS RESPOSTAS
 $where = 'perguntas_id = ' . $_GET['id'];
 
 $respostas = Resposta::getRespostas($where);
