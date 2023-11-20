@@ -22,7 +22,7 @@ $listrespostas = strlen($listrespostas) ? $listrespostas : '<tr><td colspan=4 cl
     </div>
 
     <h4 class="mt-3"><?= $obPergunta->titulo ?></h4>
-    <small><?= $username['nome'] ?> </small>
+    <small><?= $username ?> </small>
 
     <!-- Formulário de resposta da pergunta -->
 
