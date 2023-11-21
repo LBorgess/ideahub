@@ -43,6 +43,29 @@ a:hover {
 	display: none;
 }
 
+.tentando-muito {
+	display: flex;
+	gap: 10px;
+	flex-direction: column;
+
+}
+
+.tentando-mais {
+	border: 0;
+}
+
+.pergunta:hover {
+	background-color: bg-light;
+}
+
+.nao-tem-coment {
+	align-self: center;
+}
+
+.nao-tem-coment td {
+	border: 0;
+}
+
 /* @media (max-width: 600px){
 	#menu {
 		display: block;

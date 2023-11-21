@@ -15,11 +15,11 @@ if (isset($_GET['status'])) {
 
 $resultados = '';
 foreach ($perguntas as $pergunta) {
-    $resultados .= '<tr>                       
-                        <td>
-                            <a class="" href="resposta.php?id=' . $pergunta->id . '">
-                                '.$pergunta->titulo.'
-                            <a/>
+    $resultados .= '<tr class="pergunta bg-light rounded">                                               
+                        <td class="tentando-mais">
+                            <a class="tentando-link" href="resposta.php?id=' . $pergunta->id . '">
+                                '.$pergunta->titulo.' 
+                            </a>                                                   
                         </td>
                     </tr>';
 }
@@ -57,14 +57,14 @@ foreach ($paginas as $key => $pagina) {
 
     <!-- Listagem das perguntas -->
     <section>
-        <table class="table bg-light mt-3">
+        <table class="table">
             <!-- <thead>
                 <tr>
                     <th></th>
                 </tr>
             </thead> -->
-            <tbody>
-                <?= $resultados ?>
+            <tbody class="tentando-muito my-4">
+                <?= $resultados ?>                
             </tbody>
 
         </table>

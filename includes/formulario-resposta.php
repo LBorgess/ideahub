@@ -2,14 +2,14 @@
 
 $listrespostas = '';
 foreach ($respostas as $resposta) {
-    $listrespostas .= '<tr>                       
-                        <td>
+    $listrespostas .= '<tr class="bg-light rounded">                       
+                        <td class="tentando-mais">
                         ' . $resposta->conteudo . '
                         </td>
                     </tr>';
 }
 
-$listrespostas = strlen($listrespostas) ? $listrespostas : '<tr><td colspan=4 class="text-center">Ainda não há nenhum comentário</td></tr>'
+$listrespostas = strlen($listrespostas) ? $listrespostas : '<tr class="nao-tem-coment"><td colspan=4 class="text-center text-light">Ainda não há nenhum comentário</td></tr>'
 
 ?>
 <main>
@@ -21,8 +21,8 @@ $listrespostas = strlen($listrespostas) ? $listrespostas : '<tr><td colspan=4 cl
             </section>
     </div>
 
-    <h4 class="mt-3"><?= $obPergunta->titulo ?></h4>
-    <small><?= $username ?> </small>
+    <h4 class="mt-3 mb-2"><?= $obPergunta->titulo ?></h4>
+    <!-- <small><?= $username ?> </small> -->
 
     <!-- Formulário de resposta da pergunta -->
 
@@ -36,18 +36,23 @@ $listrespostas = strlen($listrespostas) ? $listrespostas : '<tr><td colspan=4 cl
         <!-- Campo para responder -->
 
         <div class="form-group">
+            <fieldset class="mt-4">Escreva sua resposta</fieldset>
             <textarea class="form-control mt-2" name="conteudo" id="conteudo" rows="3"></textarea>
         </div>
 
         <!-- Botão responder -->
         <div class="form-group">
-            <button type="submit" class="btn btn-success mt-2"><?= BUTTON ?></button>
+            <button type="submit" class="btn btn-success mt-3 mb-4"><?= BUTTON ?></button>
         </div>
+
+        <h4 class="mb-2">Comentários</h4>
 
         <!-- Lista de resposta para a pergunta -->
         <section class="mt-2">
-            <table class="table bg-light mt-2">
-                <?= $listrespostas ?>
+            <table class="table mt-2">
+                <tbody class="tentando-muito">
+                    <?= $listrespostas ?>
+                </tbody>
             </table>
         </section>
 
