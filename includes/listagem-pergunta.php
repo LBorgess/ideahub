@@ -24,7 +24,7 @@ foreach ($perguntas as $pergunta) {
                     </tr>';
 }
 
-$resultados = strlen($resultados) ? $resultados : '<tr><td colspan=4 class="text-center">Nenhuma pergunta realizada</td></tr>';
+$resultados = strlen($resultados) ? $resultados : '<tr class="nao-tem-coment"><td colspan=4 class="text-center text-light">Nenhuma pergunta realizada</td></tr>';
 
 // PAGINAÇÃO
 
