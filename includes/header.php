@@ -8,7 +8,7 @@ $usuarioLogado = Login::getUsuarioLogado();
 // DETALHES DO USUÁRIO
 $usuario = $usuarioLogado ?
     $usuarioLogado['nome'] . ' <a href="logout.php" class="font-weight-bold ml-4">&nbsp&nbspSair</a>' :
-    'Visitante <a href="login.php" class="font-weight-bold ml-4 p-2">Entrar</a>';
+    '<span>Visitante</span><a href="login.php" class="font-weight-bold ml-4 p-2">Entrar</a>';
 
 // CAMPO DE PESQUISA
 
@@ -46,7 +46,7 @@ $pesquisa = $usuarioLogado ?
     <!-- Meu estilo -->
     <link rel="stylesheet" href="./includes/css/style.css">
 
-    <title>Ideahub</title>
+    <title class="logo">Ideahub</title>
 </head>
 
 <body class="bg-dark text-light">
