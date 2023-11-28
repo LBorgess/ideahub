@@ -18,7 +18,7 @@ foreach ($perguntas as $pergunta) {
     $resultados .= '<tr class="pergunta bg-light rounded">                                               
                         <td class="tentando-mais">
                             <a class="tentando-link" href="resposta.php?id=' . $pergunta->id . '">
-                                '.$pergunta->titulo.' 
+                                <span class="titulo-pergunta">'.$pergunta->titulo.'</span> 
                             </a>                                                   
                         </td>
                     </tr>';
@@ -48,12 +48,6 @@ foreach ($paginas as $key => $pagina) {
 <main>
 
     <?= $mensagem ?>
-
-    <section class="nav justify-content-end">
-        <a href="cadastrar.php">
-            <button class="btn btn-info mt-2">Nova pergunta</button>
-        </a>
-    </section>
 
     <!-- Listagem das perguntas -->
     <section>

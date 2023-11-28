@@ -7,8 +7,8 @@ $usuarioLogado = Login::getUsuarioLogado();
 
 // DETALHES DO USUÁRIO
 $usuario = $usuarioLogado ?
-    $usuarioLogado['nome'] . ' <a href="logout.php" class="font-weight-bold ml-4">&nbsp&nbspSair</a>' :
-    '<span>Visitante</span><a href="login.php" class="font-weight-bold ml-4 p-2">Entrar</a>';
+    $usuarioLogado['nome'] . ' <a href="logout.php" class="font-weight-bold ml-4"><span class="header-link">&nbsp&nbspSair</span></a>' :
+    '<span>Visitante</span><a href="login.php" class="font-weight-bold ml-4 p-2"><span class="header-link">Entrar</span></a>';
 
 // CAMPO DE PESQUISA
 
@@ -51,18 +51,25 @@ $pesquisa = $usuarioLogado ?
 
 <body class="bg-dark text-light">
 
-    <div class="container">
+    <!-- <div class="container"> -->
         <header id="header">
             <a id="logo" href="index.php">Ideahub</a>
 
             <?= $pesquisa ?>
 
             <nav id="nav">
+                
                 <button aria-label="Abrir menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">Menu
                     <span id="hamburger"></span>
                 </button>
-                <div class="d-flex justify-content-start text-dark">
-                    <?= $usuario ?>
+                <div class="d-flex justify-content-start">
+                    <a href="cadastrar.php">
+                        <button class="btn btn-info mt-2 nova-pergunta" > <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+  <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+</svg> Nova pergunta</button>
+                    </a>
+                    <span class="usuario"><?= $usuario ?></span>
                 </div>
             </nav>
         </header>
+        <div class="container">
