@@ -1,3 +1,5 @@
+
+
 body, ul {
 	margin: 0px;
 	padding: 0px;
@@ -7,6 +9,10 @@ a {
 	color: black;
 	text-decoration: none;
 	font-family: sans-serif;
+}
+
+h4 {
+	word-wrap: break-word;
 }
 
 .d-flex {
@@ -20,7 +26,47 @@ a:hover {
 #logo {
 	font-size: 1.5rem;
 	font-weight: bold;
-	color: #9a2edb;
+	color: #b758f1;
+}
+
+.logo-pesquisa {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+
+#busca {
+	width: 20rem;
+	position: absolute;
+	padding-inline: 1.5rem;
+	border: none;
+}
+
+.search-icon-div {
+	display: flex;
+	align-items: center;
+	/* background-color: white;
+	margin-left: 0.5rem; */
+}
+
+.search-icon {
+	color: #7b838a;
+	margin-left: 3px;
+	z-index: 1;
+	transition: 0.5s;
+}
+
+#busca:focus ~ .search-icon {
+	color: black;
+}
+
+.nova-pergunta {
+	color: #fff;
+	margin: 0.2rem 1rem;
+	padding: 0.1rem 1.5rem;
+	background-color: #634dd1;
+	border-color: #634dd1;
 }
 
 #header {
@@ -30,7 +76,15 @@ a:hover {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	background: #e7e7e7;
+	border-bottom: 1px solid gray;
+}
+
+.header-link {
+	color: white;
+}
+
+.usuario {
+	margin-bottom: 1px;
 }
 
 #menu {
@@ -52,11 +106,27 @@ a:hover {
 	display: flex;
 	gap: 10px;
 	flex-direction: column;
-
 }
 
 .tentando-mais {
 	border: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.titulo-pergunta {
+	font-weight: bold;
+}
+
+.titulo-pergunta, .resposta {
+	font-size: 20px;
+	word-wrap: anywhere;
+}
+
+.f-card {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
 }
 
 .pergunta:hover {
@@ -71,62 +141,15 @@ a:hover {
 	border: 0;
 }
 
-/* @media (max-width: 600px){
-	#menu {
-		display: block;
-		position: absolute;
-		width: 100%;
-		top: 70px;
-		right: 0px;
-		background: #e7e7e7;
-		height: 0px;
-		transition: .6s;		
-		z-index: 1000;
-		visibility: hidden;
-		overflow-y: hidden;
+@media only screen and (max-width: 750px) {
+	.search-icon-div {
+		display: none;
 	}
-	#nav.active #menu{
-		height: calc(100vh - 70px);
-		visibility: visible;
-		overflow-y: auto;
-	}
-	#menu a {
-		padding: 1rem 0;
-		margin: 0 1rem;
-		border-bottom: 2px solid rgba(0, 0, 0, .05);
-	}
-	#btn-mobile {
-		display: flex;
-		padding: .5rem 1rem;
-		font-size: 1rem;
-		border: none;
-		background: none;
-		cursor: pointer;
-		gap: .5rem;
-	}
-	#hamburger {
-		border-top: 2px solid;
-		width: 20px;
-	}
-	#hamburger::after, #hamburger::before {
-		content: '';
-		display: block;
-		width: 20px;
-		height: 2px;
-		background: currentColor;
-		margin-top: 5px;
-		transition: .3s;
-		position: relative;
-	}
-	#nav.active #hamburger {
-		border-top-color: transparent;
+}
 
+@media only screen and (min-width: 800px) {
+
+	main {
+		margin: 0 13rem;
 	}
-	#nav.active #hamburger::before {
-		transform: rotate(135deg);
-	}
-	#nav.active #hamburger::after {
-		transform: rotate(-135deg);
-		top: -7px;
-	}
-} */
+}

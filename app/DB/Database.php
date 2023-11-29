@@ -27,7 +27,7 @@ class Database
      * Usuário do banco de dados
      * @var string
      */
-    const USER = 'adm';
+    const USER = 'amd';
 
     /**
      * Senha de acesso ao banco de dados
