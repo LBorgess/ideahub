@@ -27,13 +27,13 @@ class Database
      * Usuário do banco de dados
      * @var string
      */
-    const USER = 'root';
+    const USER = 'amd';
 
     /**
      * Senha de acesso ao banco de dados
      * @var string
      */
-    const PASS = '12345678';
+    const PASS = 'tcc.ideahub@etec.com';
 
     /**
      * Nome da tabela que será manipulada
