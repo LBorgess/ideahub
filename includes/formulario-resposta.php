@@ -47,7 +47,7 @@ $listrespostas = strlen($listrespostas) ? $listrespostas : '<tr class="nao-tem-c
 
         <div class="form-group">
             <fieldset class="mt-4">Escreva sua resposta</fieldset>
-            <textarea class="form-control mt-2" name="conteudo" id="conteudo" rows="3"></textarea>
+            <textarea class="form-control mt-2" name="conteudo" id="conteudo" rows="3" required></textarea>
         </div>
 
         <!-- Botão responder -->

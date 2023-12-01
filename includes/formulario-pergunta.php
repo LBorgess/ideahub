@@ -15,13 +15,13 @@
         
         <div class="form-group">
             <label for="titulo">Titulo da pergunta</label>
-            <input type="text" name="titulo" id="titulo" class="form-control" value="<?=$obPergunta->titulo?>">
+            <input type="text" name="titulo" id="titulo" class="form-control" required value="<?=$obPergunta->titulo?>">
             <small class="form-text text-muted">Use sua criatividade</small>
         </div>
 
         <div class="form-group">
             <label for="conteudo">Descrição</label>
-            <textarea name="conteudo" id="conteudo" class="form-control" rows="5"><?=$obPergunta->conteudo?></textarea>
+            <textarea name="conteudo" id="conteudo" class="form-control" rows="5" required><?=$obPergunta->conteudo?></textarea>
             <small class="form-text text-muted">Seja detalhista</small>
         </div>
 
