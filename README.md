@@ -5,8 +5,11 @@
 ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
 
-
 Nosso objetivo foi desenvolver uma plataforma onde os alunos da Etec pudessem interagir e compartilhar experiências, dúvidas e conhecimento. Pois compartilhando o que se sabe ajuda a si e ao outro. 
+
+---
+
+Link da documentação: [Repositório Institucional do Conhecimento - RIC-CPS](https://ric.cps.sp.gov.br/handle/123456789/17071)
 
 ## Colaboradores
 
